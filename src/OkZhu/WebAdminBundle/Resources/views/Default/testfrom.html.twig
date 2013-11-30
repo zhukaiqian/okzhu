@@ -1,0 +1,17 @@
+
+<form action="{{ path('ok_zhu_web_admin_testfrompage') }}" method ="post" {{ form_enctype(form) }}>
+        
+		{{ form_errors(form) }}
+		{{ form_row(form.name,{'label': 'namenamenamenameme' } ) }}
+		
+		{{ form_label(form.description,'descriptiondescriptionName', {'label_attr': {'class': 'descriptionsssssssssssssssss'}}) }}
+		{{ form_errors(form.description) }}
+		{{ form_widget(form.description,{'attr': {'class': 'foo'}} ) }}
+	
+		{{ form_rest(form) }}
+	
+     <input type="submit" />
+</form>
+
+
+sadsadasds

@@ -1,0 +1,48 @@
+{% extends 'OkZhuWebAdminBundle:layout:main_layout.html.twig' %}
+{% block content %}
+	<div class="row-fluid">
+			<div class="dialog">
+				<div class="block">
+					<p class="block-heading">Sign In   {{ ga_tracking }}  </p>
+					<div class="block-body">
+						 <form action="{{ path("ok_zhu_web_admin_login_checkpage") }}" method="post" id="login">
+							{% if error %}
+								<label>{{ error.message }}</label>
+							{% endif %}
+							
+							{% if test %}
+								<label>{{ test }}</label>
+							{% endif %}
+							
+							
+							<label>Username</label>
+							<input class="span12" type="text" id="username" name="_username" value="{{ last_username }}" />
+							<label>Password</label>
+							<input class="span12" type="password" id="password" name="_password" />
+							 <button class="btn btn-primary pull-right" type="submit">Sign In</button>
+							<label class="remember-me"><input type="checkbox"> Remember me</label>
+							<div class="clearfix"></div>
+						</form>
+					</div>
+				</div>
+				<p><a href="reset-password.html">Forgot your password?</a></p>
+			</div>
+	</div>
+	
+	
+			{{ "ok_zhu_web_admin_loginpage" == app.request.attributes.get("_route") ?"aaa":"ssss" }}
+	<pre>
+	{{ dump(app.request.attributes.get("_route"))}}
+	</pre>
+	
+{% macro inputss(name, value, type, size) %}
+		<input type="{{ type|default('text') }}" name="{{ name }}" value="{{ value|e }}" size="{{ size|default(20) }}" />
+{% endmacro %}
+
+{{ _self.inputss("ddddd") }} 	
+	
+	
+{% endblock %}
+
+
+

@@ -1,0 +1,20 @@
+e:\xampp\php\phpunit.bat -c app/ 
+ 
+e:\xampp\php\php.exe composer.phar -v
+
+e:\xampp\php\php.exe app/console init:bundle “Acme\TestBundle”
+
+e:\xampp\php\php.exe app/console generate:bundle --namespace=OkZhu/WebAdminBundle --format=yml  添加一个 bundle
+
+e:\xampp\php\php.exe app/console assetic:dump --watch      css js 发布到web
+
+e:\xampp\php\php.exe app/console doctrine:database:create 创建数据库
+
+e:\xampp\php\php.exe app/console doctrine:generate:entity  创建一个entity
+
+e:\xampp\php\php.exe app/console doctrine:generate:entities OkZhu/WebAdminBundle/Entity/User  自动建立这个 entity的GET SET 方法
+
+e:\xampp\php\php.exe app/console doctrine:schema:update --force 把创立好的 entity 刷到数据库里面
+
+
+e:\xampp\php\php.exe composer.phar create-project symfony/framework-standard-edition  建立整个项目

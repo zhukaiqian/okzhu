@@ -21,8 +21,10 @@ class SecuredController extends Controller
     {
         if ($request->attributes->has(SecurityContext::AUTHENTICATION_ERROR)) {
             $error = $request->attributes->get(SecurityContext::AUTHENTICATION_ERROR);
+			$error ="1111111111";
         } else {
             $error = $request->getSession()->get(SecurityContext::AUTHENTICATION_ERROR);
+			$error ="2222222222";
         }
 
         return array(

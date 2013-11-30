@@ -1,0 +1,16 @@
+ok_zhu_web_admin_loginpage:
+    pattern:  /admin_login
+    defaults: { _controller: OkZhuWebAdminBundle:Login:login }
+
+ok_zhu_web_admin_login_checkpage:
+    pattern:  /admin/login_check
+    defaults: { _controller: OkZhuWebAdminBundle:Login:loginCheck }
+
+ok_zhu_web_admin_login_outpage:
+    pattern:  /admin/admin_logout
+    defaults: { _controller: OkZhuWebAdminBundle:Login:logOut }
+
+ok_zhu_web_admin_homepage:
+    pattern:  /admin/
+    defaults: { _controller: OkZhuWebAdminBundle:Default:index }
+

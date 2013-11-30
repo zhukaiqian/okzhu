@@ -1,0 +1,11 @@
+parameters:
+    ok_zhu_web_admin.test.class: OkZhu\WebAdminBundle\Services\TestServices
+
+services:
+    ok_zhu_web_admin.test:
+        class: %ok_zhu_web_admin.test.class%
+        arguments: [@doctrine.orm.entity_manager]
+
+    cache:
+        class: Doctrine\Common\Cache\PhpFileCache
+        arguments: [%kernel.cache_dir%]

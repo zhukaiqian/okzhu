@@ -3,15 +3,16 @@ security:
         Symfony\Component\Security\Core\User\User: plaintext
 
     role_hierarchy:
-        ROLE_ADMIN:       ROLE_USER
-        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+        ROLE_ADMIN_LOGIN: ROLE_ADMIN_LOGIN
+        ROLE_ADMIN_TASK_LOG_LIST: ROLE_ADMIN_TASK_LOG_LIST
+        ROLE_SUPER_ADMIN: [ ROLE_ADMIN_LOGIN,ROLE_ADMIN_TASK_LOG_LIST]
 
     providers:
         in_memory:
             memory:
                 users:
                     user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+                    admin: { password: adminpass, roles: [ 'ROLE_SUPER_ADMIN' ] }
 
     firewalls:
         dev:
@@ -33,7 +34,17 @@ security:
             #anonymous: ~
             #http_basic:
             #    realm: "Secured Demo Area"
-
+            
+        admin:	
+            pattern:  ^/admin/
+            form_login: 
+                login_path: /admin_login
+                check_path: /admin/login_check
+            logout:
+                path: /admin/admin_logout
+                target: /admin
+    
     access_control:
         - { path: ^/demo/secured/hello/admin/, roles: ROLE_ADMIN }
+        #- { path: ^/admin/, roles: ROLE_ADMIN }
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }

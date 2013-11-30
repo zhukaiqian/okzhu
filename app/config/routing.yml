@@ -1,0 +1,4 @@
+ok_zhu_web_admin:
+    resource: "@OkZhuWebAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+

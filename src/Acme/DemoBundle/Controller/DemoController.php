@@ -54,8 +54,4 @@ class DemoController extends Controller
 
         return array('form' => $form->createView());
     }
-
-    public function mytest(){
-
-    }
 }
